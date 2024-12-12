@@ -19,7 +19,8 @@ class SendEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'email:send {email}'; // Đặt tên câu lệnh
+    // protected $signature = 'email:send {email=contact@unicode} {--Q|queue=}'; // Đặt tên câu lệnh
+    protected $signature = 'email:send {email*} {--Q|queue=*}'; // Đặt tên câu lệnh
 
     /**
      * The console command description.
@@ -33,7 +34,8 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        echo $this->argument('email');
-        $this->email->send();
+        var_dump($this->argument('email'));
+        var_dump($this->option('queue'));
+        echo $this->email->send();
     }
 }

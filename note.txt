@@ -8,6 +8,7 @@ Tình huống đặt ra
 
 Bàn giao : Share repo git
 - composer update
+- php artisan key:generate
 - php artisan migrate
 - php artisan db:seed
 - php artisan cache:clear

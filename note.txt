@@ -1,5 +1,18 @@
-composer update
-php artisan migrate
-php artisan db:seed
+Tình huống đặt ra
+
+- Hoàn thiện 1 project Laravel
+- Đóng gói :
+    + Source Code
+    + Database : Migrations, Seeder
+- Push lên Git
+
+Bàn giao : Share repo git
+- composer update
+- php artisan migrate
+- php artisan db:seed
+- php artisan cache:clear
+- php artisan config:clear 
+- php artisan route:clear
+- php artisan view:clear
 
 => php artisan install

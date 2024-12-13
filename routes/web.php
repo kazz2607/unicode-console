@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('clear-cache', function(){
+    Artisan::call('cache:clear');
+});
+
+Route::get('show-user', function(){
+    Artisan::call('user:show');
+    // echo Artisan::output();
+});
+
+Route::get('show-email', function(){
+    Artisan::call('email:options',['email' => 'email@gmail.com','--queue' => 'acb']);
+    echo nl2br(Artisan::output());
 });

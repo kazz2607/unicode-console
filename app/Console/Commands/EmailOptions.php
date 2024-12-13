@@ -15,7 +15,7 @@ class EmailOptions extends Command
      *
      * @var string
      */
-    protected $signature = 'email:options';
+    protected $signature = 'email:options {email} {--queue=}';
 
     /**
      * The console command description.
@@ -29,6 +29,8 @@ class EmailOptions extends Command
      */
     public function handle()
     {
-        //
+        $this->info($this->argument('email'));
+        // $this->output->newLine();
+        $this->info($this->option('queue'));
     }
 }

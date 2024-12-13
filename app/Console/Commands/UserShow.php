@@ -30,16 +30,18 @@ class UserShow extends Command
         // $users = User::all(['name', 'email'])->toArray();
         // $this->table($headers, $users);
 
-        $users = User::all();
-        $bar = $this->output->createProgressBar(count($users));
-        $bar->start();
-        foreach ($users as $user) {
-            sleep(1);
-            // usleep(5000);
-            // $this->info('Name :'.$user->name);
-            // $this->info('Email :'.$user->email);
-            $bar->advance();
-        }
-        $bar->finish();
+        $users = User::all(['name','email'])->toArray();
+        $this->table(['Name','Email'], $users);
+
+        // $bar = $this->output->createProgressBar(count($users));
+        // $bar->start();
+        // foreach ($users as $user) {
+        //     sleep(1);
+        //     // usleep(5000);
+        //     // $this->info('Name :'.$user->name);
+        //     // $this->info('Email :'.$user->email);
+        //     $bar->advance();
+        // }
+        // $bar->finish();
     }
 }
